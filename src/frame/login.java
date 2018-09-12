@@ -7,10 +7,9 @@ package frame;
 
 import com.sun.webkit.dom.EventImpl;
 
-/**
- *
- * @author augusto-mar
- */
+import AppPackage.AnimationClass;
+        
+
 public class login extends javax.swing.JFrame {
 
     /**
@@ -44,6 +43,9 @@ public class login extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jlbInternet = new javax.swing.JLabel();
+        jlbCuladora = new javax.swing.JLabel();
+        jlbMusica = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jpmenu1 = new javax.swing.JLabel();
         jpmenu2 = new javax.swing.JLabel();
@@ -74,16 +76,16 @@ public class login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(238, 112, 82));
         jLabel1.setText("Password:");
-        jpentrar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        jpentrar.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(238, 112, 82));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(238, 112, 82));
         jLabel3.setText("User:");
-        jpentrar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        jpentrar.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user.png"))); // NOI18N
-        jpentrar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, 70));
+        jpentrar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, 70));
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -95,28 +97,33 @@ public class login extends javax.swing.JFrame {
                 jTextField1KeyPressed(evt);
             }
         });
-        jpentrar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 170, 30));
-        jpentrar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 220, 20));
-        jpentrar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 20));
+        jpentrar.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 170, 30));
+        jpentrar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 220, 20));
+        jpentrar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 20));
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
         jPasswordField1.setText("password");
         jPasswordField1.setBorder(null);
-        jpentrar.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 170, 30));
+        jpentrar.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 170, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jpentrar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
         jpentrar.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user24.png"))); // NOI18N
-        jpentrar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 30));
+        jpentrar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 30));
         jpentrar.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/key24.png"))); // NOI18N
-        jpentrar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 30));
+        jpentrar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enter.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -126,7 +133,19 @@ public class login extends javax.swing.JFrame {
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterON.png"))); // NOI18N
         jButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterON.png"))); // NOI18N
         jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterON.png"))); // NOI18N
-        jpentrar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 60, 30));
+        jpentrar.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 60, 30));
+
+        jlbInternet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Globe_32px.png"))); // NOI18N
+        jlbInternet.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpentrar.add(jlbInternet, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 50, -1, -1));
+
+        jlbCuladora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Calculator_32px.png"))); // NOI18N
+        jlbCuladora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpentrar.add(jlbCuladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 90, -1, -1));
+
+        jlbMusica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Musical_Notes_32px.png"))); // NOI18N
+        jlbMusica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpentrar.add(jlbMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 130, -1, -1));
 
         getContentPane().add(jpentrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 580));
 
@@ -135,37 +154,31 @@ public class login extends javax.swing.JFrame {
 
         jpmenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/analyze (1).png"))); // NOI18N
-        jpmenu1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 180, 160));
 
         jpmenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/google-drive.png"))); // NOI18N
-        jpmenu2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 180, 160));
 
         jpmenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/clock-circular-outline.png"))); // NOI18N
-        jpmenu3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 180, 160));
 
         jpmenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/creative.png"))); // NOI18N
-        jpmenu4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 180, 160));
 
         jpmenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/calendar-with-a-clock-time-tools.png"))); // NOI18N
-        jpmenu5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 180, 160));
 
         jpmenu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/hand-shake.png"))); // NOI18N
-        jpmenu6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jpmenu6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 180, 160));
 
@@ -208,7 +221,8 @@ public class login extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifier.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
 
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
+        jTextField2.setText("Buscar...");
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 220, 20));
 
@@ -237,6 +251,30 @@ public class login extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        
+        AnimationClass internet = new AnimationClass();
+        internet.jLabelXRight(-40, 10, 10, 5, jlbInternet);
+        
+         AnimationClass calculadora = new AnimationClass();
+        calculadora.jLabelXRight(-40,10, 10, 5, jlbCuladora);
+        
+         AnimationClass musica  = new AnimationClass();
+        musica.jLabelXRight(-40,10, 10, 5, jlbMusica);
+        
+        
+        //<---
+        AnimationClass internett = new AnimationClass();
+        internett.jLabelXLeft(10, -40, 10, 5, jlbInternet);
+        
+         AnimationClass calculadoraa = new AnimationClass();
+        calculadoraa.jLabelXLeft(10, -40, 10, 5, jlbCuladora);
+        
+         AnimationClass musicaa  = new AnimationClass();
+        musicaa.jLabelXLeft(10, -40, 10, 5, jlbMusica);
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -297,6 +335,9 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jlbCuladora;
+    private javax.swing.JLabel jlbInternet;
+    private javax.swing.JLabel jlbMusica;
     private javax.swing.JPanel jpentrar;
     private javax.swing.JLabel jpmenu1;
     private javax.swing.JLabel jpmenu2;
