@@ -8,6 +8,7 @@ package frame;
 import com.sun.webkit.dom.EventImpl;
 
 import AppPackage.AnimationClass;
+import javax.swing.JOptionPane;
         
 
 public class login extends javax.swing.JFrame {
@@ -48,7 +49,7 @@ public class login extends javax.swing.JFrame {
         jlbMusica = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jpmenu1 = new javax.swing.JLabel();
-        jpmenu2 = new javax.swing.JLabel();
+        jpDrive = new javax.swing.JLabel();
         jpmenu3 = new javax.swing.JLabel();
         jpmenu4 = new javax.swing.JLabel();
         jpmenu5 = new javax.swing.JLabel();
@@ -62,6 +63,8 @@ public class login extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        jlbMinimizar = new javax.swing.JLabel();
+        jlbFechar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -157,10 +160,20 @@ public class login extends javax.swing.JFrame {
         jpmenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jpmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 180, 160));
 
-        jpmenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/google-drive.png"))); // NOI18N
-        jpmenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 180, 160));
+        jpDrive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpDrive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/google-drive.png"))); // NOI18N
+        jpDrive.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpDrive.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpDriveMouseMoved(evt);
+            }
+        });
+        jpDrive.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpDriveMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpDrive, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 180, 160));
 
         jpmenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpmenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/clock-circular-outline.png"))); // NOI18N
@@ -229,17 +242,23 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 760, 530));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
+        jlbMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jlbMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlbMinimizarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jlbMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, 30));
+
+        jlbFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Multiply_32px.png"))); // NOI18N
+        jlbFechar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlbFecharMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jlbFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 760, 50));
 
@@ -253,6 +272,9 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyPressed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+     
+        
+        //--->
         
         AnimationClass internet = new AnimationClass();
         internet.jLabelXRight(-40, 10, 10, 5, jlbInternet);
@@ -265,6 +287,7 @@ public class login extends javax.swing.JFrame {
         
         
         //<---
+        
         AnimationClass internett = new AnimationClass();
         internett.jLabelXLeft(10, -40, 10, 5, jlbInternet);
         
@@ -275,6 +298,34 @@ public class login extends javax.swing.JFrame {
         musicaa.jLabelXLeft(10, -40, 10, 5, jlbMusica);
         
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jlbFecharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbFecharMouseClicked
+        // TODO add your handling code here:
+        
+        int dialog = JOptionPane.YES_NO_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "Deseja sair do Login?", "Exit", dialog);
+        if(result == 0)
+                {
+                    System.exit(0);
+                }
+        
+    }//GEN-LAST:event_jlbFecharMouseClicked
+
+    private void jlbMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbMinimizarMouseClicked
+        // TODO add your handling code here:
+        
+        this.setState(login.ICONIFIED);
+    }//GEN-LAST:event_jlbMinimizarMouseClicked
+
+    private void jpDriveMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpDriveMouseMoved
+        // TODO add your handling code here:
+        jpDrive.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpDriveMouseMoved
+
+    private void jpDriveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpDriveMouseExited
+        // TODO add your handling code here:
+        jpDrive.setBorder(null);
+    }//GEN-LAST:event_jpDriveMouseExited
 
     /**
      * @param args the command line arguments
@@ -336,11 +387,13 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel jlbCuladora;
+    private javax.swing.JLabel jlbFechar;
     private javax.swing.JLabel jlbInternet;
+    private javax.swing.JLabel jlbMinimizar;
     private javax.swing.JLabel jlbMusica;
+    private javax.swing.JLabel jpDrive;
     private javax.swing.JPanel jpentrar;
     private javax.swing.JLabel jpmenu1;
-    private javax.swing.JLabel jpmenu2;
     private javax.swing.JLabel jpmenu3;
     private javax.swing.JLabel jpmenu4;
     private javax.swing.JLabel jpmenu5;
