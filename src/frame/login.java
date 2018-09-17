@@ -48,12 +48,12 @@ public class login extends javax.swing.JFrame {
         jlbCuladora = new javax.swing.JLabel();
         jlbMusica = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jpmenu1 = new javax.swing.JLabel();
+        jpAjustes = new javax.swing.JLabel();
         jpDrive = new javax.swing.JLabel();
-        jpmenu3 = new javax.swing.JLabel();
-        jpmenu4 = new javax.swing.JLabel();
-        jpmenu5 = new javax.swing.JLabel();
-        jpmenu6 = new javax.swing.JLabel();
+        jpCronograma = new javax.swing.JLabel();
+        jpAnotacoes = new javax.swing.JLabel();
+        jpEventos = new javax.swing.JLabel();
+        jpSocios = new javax.swing.JLabel();
         jLDriver = new javax.swing.JLabel();
         jLCronograma = new javax.swing.JLabel();
         jLAnotações = new javax.swing.JLabel();
@@ -155,10 +155,20 @@ public class login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jpmenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/analyze (1).png"))); // NOI18N
-        jpmenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 180, 160));
+        jpAjustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/analyze (1).png"))); // NOI18N
+        jpAjustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpAjustes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpAjustesMouseMoved(evt);
+            }
+        });
+        jpAjustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpAjustesMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 180, 160));
 
         jpDrive.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jpDrive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/google-drive.png"))); // NOI18N
@@ -175,25 +185,65 @@ public class login extends javax.swing.JFrame {
         });
         jPanel1.add(jpDrive, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 180, 160));
 
-        jpmenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/clock-circular-outline.png"))); // NOI18N
-        jpmenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 180, 160));
+        jpCronograma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpCronograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/clock-circular-outline.png"))); // NOI18N
+        jpCronograma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpCronograma.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpCronogramaMouseMoved(evt);
+            }
+        });
+        jpCronograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpCronogramaMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpCronograma, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 180, 160));
 
-        jpmenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/creative.png"))); // NOI18N
-        jpmenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 180, 160));
+        jpAnotacoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpAnotacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/creative.png"))); // NOI18N
+        jpAnotacoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpAnotacoes.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpAnotacoesMouseMoved(evt);
+            }
+        });
+        jpAnotacoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpAnotacoesMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpAnotacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 180, 160));
 
-        jpmenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/calendar-with-a-clock-time-tools.png"))); // NOI18N
-        jpmenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 180, 160));
+        jpEventos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpEventos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/calendar-with-a-clock-time-tools.png"))); // NOI18N
+        jpEventos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpEventos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpEventosMouseMoved(evt);
+            }
+        });
+        jpEventos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpEventosMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpEventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 180, 160));
 
-        jpmenu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jpmenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/hand-shake.png"))); // NOI18N
-        jpmenu6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jpmenu6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 180, 160));
+        jpSocios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jpSocios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/hand-shake.png"))); // NOI18N
+        jpSocios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpSocios.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jpSociosMouseMoved(evt);
+            }
+        });
+        jpSocios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jpSociosMouseExited(evt);
+            }
+        });
+        jPanel1.add(jpSocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 180, 160));
 
         jLDriver.setBackground(new java.awt.Color(181, 11, 33));
         jLDriver.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -245,17 +295,33 @@ public class login extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jlbMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Expand_Arrow_32px.png"))); // NOI18N
+        jlbMinimizar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlbMinimizarMouseMoved(evt);
+            }
+        });
         jlbMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jlbMinimizarMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlbMinimizarMouseExited(evt);
             }
         });
         jPanel2.add(jlbMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, 30));
 
         jlbFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8_Multiply_32px.png"))); // NOI18N
+        jlbFechar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jlbFecharMouseMoved(evt);
+            }
+        });
         jlbFechar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jlbFecharMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jlbFecharMouseExited(evt);
             }
         });
         jPanel2.add(jlbFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, -1, 30));
@@ -327,6 +393,76 @@ public class login extends javax.swing.JFrame {
         jpDrive.setBorder(null);
     }//GEN-LAST:event_jpDriveMouseExited
 
+    private void jpCronogramaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpCronogramaMouseMoved
+        // TODO add your handling code here:
+        jpCronograma.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpCronogramaMouseMoved
+
+    private void jpAnotacoesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAnotacoesMouseMoved
+        // TODO add your handling code here:
+        jpAnotacoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpAnotacoesMouseMoved
+
+    private void jpEventosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpEventosMouseMoved
+        // TODO add your handling code here:
+        jpEventos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpEventosMouseMoved
+
+    private void jpSociosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpSociosMouseMoved
+        // TODO add your handling code here:
+        jpSocios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpSociosMouseMoved
+
+    private void jpAjustesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAjustesMouseMoved
+        // TODO add your handling code here:
+        jpAjustes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jpAjustesMouseMoved
+
+    private void jpCronogramaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpCronogramaMouseExited
+        // TODO add your handling code here:
+        jpCronograma.setBorder(null);
+    }//GEN-LAST:event_jpCronogramaMouseExited
+
+    private void jpAnotacoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAnotacoesMouseExited
+        // TODO add your handling code here:
+        jpAnotacoes.setBorder(null);
+    }//GEN-LAST:event_jpAnotacoesMouseExited
+
+    private void jpEventosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpEventosMouseExited
+        // TODO add your handling code here:
+        jpEventos.setBorder(null);
+    }//GEN-LAST:event_jpEventosMouseExited
+
+    private void jpSociosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpSociosMouseExited
+        // TODO add your handling code here:
+        jpSocios.setBorder(null);
+    }//GEN-LAST:event_jpSociosMouseExited
+
+    private void jpAjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpAjustesMouseExited
+        // TODO add your handling code here:
+        jpAjustes.setBorder(null);
+    }//GEN-LAST:event_jpAjustesMouseExited
+
+    private void jlbFecharMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbFecharMouseMoved
+        // TODO add your handling code here:
+        jlbFechar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlbFecharMouseMoved
+
+    private void jlbFecharMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbFecharMouseExited
+        // TODO add your handling code here:
+        jlbFechar.setBorder(null);
+    }//GEN-LAST:event_jlbFecharMouseExited
+
+    private void jlbMinimizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbMinimizarMouseExited
+        // TODO add your handling code here:
+        jlbMinimizar.setBorder(null);
+    }//GEN-LAST:event_jlbMinimizarMouseExited
+
+    private void jlbMinimizarMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbMinimizarMouseMoved
+        // TODO add your handling code here:
+        jlbMinimizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+    }//GEN-LAST:event_jlbMinimizarMouseMoved
+
     /**
      * @param args the command line arguments
      */
@@ -391,12 +527,12 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jlbInternet;
     private javax.swing.JLabel jlbMinimizar;
     private javax.swing.JLabel jlbMusica;
+    private javax.swing.JLabel jpAjustes;
+    private javax.swing.JLabel jpAnotacoes;
+    private javax.swing.JLabel jpCronograma;
     private javax.swing.JLabel jpDrive;
+    private javax.swing.JLabel jpEventos;
+    private javax.swing.JLabel jpSocios;
     private javax.swing.JPanel jpentrar;
-    private javax.swing.JLabel jpmenu1;
-    private javax.swing.JLabel jpmenu3;
-    private javax.swing.JLabel jpmenu4;
-    private javax.swing.JLabel jpmenu5;
-    private javax.swing.JLabel jpmenu6;
     // End of variables declaration//GEN-END:variables
 }
